@@ -2,7 +2,7 @@ package bean;
 // Generated 08/10/2025 11:02:44 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,12 +25,12 @@ public class CearVendasprodutos  implements java.io.Serializable {
      private CearProdutos cearProdutos;
      private CearVendas cearVendas;
      private int cearQuantidade;
-     private BigDecimal cearValorunitario;
+     private double cearValorunitario;
 
     public CearVendasprodutos() {
     }
 
-    public CearVendasprodutos(int cearIdVendasprodutos, CearProdutos cearProdutos, CearVendas cearVendas, int cearQuantidade, BigDecimal cearValorunitario) {
+    public CearVendasprodutos(int cearIdVendasprodutos, CearProdutos cearProdutos, CearVendas cearVendas, int cearQuantidade, double cearValorunitario) {
        this.cearIdVendasprodutos = cearIdVendasprodutos;
        this.cearProdutos = cearProdutos;
        this.cearVendas = cearVendas;
@@ -82,11 +82,11 @@ public class CearVendasprodutos  implements java.io.Serializable {
 
     
     @Column(name="cear_valorunitario", nullable=false, precision=10)
-    public BigDecimal getCearValorunitario() {
+    public double getCearValorunitario() {
         return this.cearValorunitario;
     }
     
-    public void setCearValorunitario(BigDecimal cearValorunitario) {
+    public void setCearValorunitario(double cearValorunitario) {
         this.cearValorunitario = cearValorunitario;
     }
 

@@ -3,13 +3,12 @@ package bean;
 
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -39,7 +38,7 @@ public class CearClientes  implements java.io.Serializable {
      private String cearEstado;
      private String cearTelefone;
      private String cearBairro;
-     private Set cearVendases = new HashSet(0);
+
 
     public CearClientes() {
     }
@@ -78,7 +77,7 @@ public class CearClientes  implements java.io.Serializable {
        this.cearEstado = cearEstado;
        this.cearTelefone = cearTelefone;
        this.cearBairro = cearBairro;
-       this.cearVendases = cearVendases;
+      
     }
    
      @Id 
@@ -232,16 +231,6 @@ public class CearClientes  implements java.io.Serializable {
     public void setCearBairro(String cearBairro) {
         this.cearBairro = cearBairro;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="cearClientes")
-    public Set getCearVendases() {
-        return this.cearVendases;
-    }
-    
-    public void setCearVendases(Set cearVendases) {
-        this.cearVendases = cearVendases;
-    }
-
 
 
 

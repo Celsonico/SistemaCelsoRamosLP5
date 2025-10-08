@@ -2,9 +2,8 @@ package bean;
 // Generated 08/10/2025 11:02:44 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
+
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,15 +29,15 @@ public class CearVendas  implements java.io.Serializable {
      private CearClientes cearClientes;
      private CearVendedor cearVendedor;
      private Date cearDataVenda;
-     private BigDecimal cearTotal;
+     private double cearTotal;
      private String cearFormaPagamento;
-     private Set cearVendasprodutoses = new HashSet(0);
+     
 
     public CearVendas() {
     }
 
 	
-    public CearVendas(int cearIdVendas, CearClientes cearClientes, CearVendedor cearVendedor, Date cearDataVenda, BigDecimal cearTotal, String cearFormaPagamento) {
+    public CearVendas(int cearIdVendas, CearClientes cearClientes, CearVendedor cearVendedor, Date cearDataVenda, double cearTotal, String cearFormaPagamento) {
         this.cearIdVendas = cearIdVendas;
         this.cearClientes = cearClientes;
         this.cearVendedor = cearVendedor;
@@ -47,14 +45,14 @@ public class CearVendas  implements java.io.Serializable {
         this.cearTotal = cearTotal;
         this.cearFormaPagamento = cearFormaPagamento;
     }
-    public CearVendas(int cearIdVendas, CearClientes cearClientes, CearVendedor cearVendedor, Date cearDataVenda, BigDecimal cearTotal, String cearFormaPagamento, Set cearVendasprodutoses) {
+    public CearVendas(int cearIdVendas, CearClientes cearClientes, CearVendedor cearVendedor, Date cearDataVenda, double cearTotal, String cearFormaPagamento, Set cearVendasprodutoses) {
        this.cearIdVendas = cearIdVendas;
        this.cearClientes = cearClientes;
        this.cearVendedor = cearVendedor;
        this.cearDataVenda = cearDataVenda;
        this.cearTotal = cearTotal;
        this.cearFormaPagamento = cearFormaPagamento;
-       this.cearVendasprodutoses = cearVendasprodutoses;
+     
     }
    
      @Id 
@@ -101,11 +99,11 @@ public class CearVendas  implements java.io.Serializable {
 
     
     @Column(name="cear_total", nullable=false, precision=10)
-    public BigDecimal getCearTotal() {
+    public double getCearTotal() {
         return this.cearTotal;
     }
     
-    public void setCearTotal(BigDecimal cearTotal) {
+    public void setCearTotal(double cearTotal) {
         this.cearTotal = cearTotal;
     }
 
@@ -118,16 +116,6 @@ public class CearVendas  implements java.io.Serializable {
     public void setCearFormaPagamento(String cearFormaPagamento) {
         this.cearFormaPagamento = cearFormaPagamento;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="cearVendas")
-    public Set getCearVendasprodutoses() {
-        return this.cearVendasprodutoses;
-    }
-    
-    public void setCearVendasprodutoses(Set cearVendasprodutoses) {
-        this.cearVendasprodutoses = cearVendasprodutoses;
-    }
-
 
 
 

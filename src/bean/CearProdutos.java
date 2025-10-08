@@ -2,15 +2,15 @@ package bean;
 // Generated 08/10/2025 11:02:44 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
+
 import java.util.Date;
-import java.util.HashSet;
+
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,19 +27,18 @@ public class CearProdutos  implements java.io.Serializable {
 
      private int cearIdProdutos;
      private Date cearDataLancamento;
-     private BigDecimal cearValor;
+     private double cearValor;
      private String cearMarca;
      private String cearNome;
      private int cearModelo;
      private Date cearDataFabricacao;
      private String cearUsado;
-     private Set cearVendasprodutoses = new HashSet(0);
-
+ 
     public CearProdutos() {
     }
 
 	
-    public CearProdutos(int cearIdProdutos, Date cearDataLancamento, BigDecimal cearValor, String cearMarca, String cearNome, int cearModelo, Date cearDataFabricacao, String cearUsado) {
+    public CearProdutos(int cearIdProdutos, Date cearDataLancamento, double cearValor, String cearMarca, String cearNome, int cearModelo, Date cearDataFabricacao, String cearUsado) {
         this.cearIdProdutos = cearIdProdutos;
         this.cearDataLancamento = cearDataLancamento;
         this.cearValor = cearValor;
@@ -49,7 +48,7 @@ public class CearProdutos  implements java.io.Serializable {
         this.cearDataFabricacao = cearDataFabricacao;
         this.cearUsado = cearUsado;
     }
-    public CearProdutos(int cearIdProdutos, Date cearDataLancamento, BigDecimal cearValor, String cearMarca, String cearNome, int cearModelo, Date cearDataFabricacao, String cearUsado, Set cearVendasprodutoses) {
+    public CearProdutos(int cearIdProdutos, Date cearDataLancamento, double cearValor, String cearMarca, String cearNome, int cearModelo, Date cearDataFabricacao, String cearUsado, Set cearVendasprodutoses) {
        this.cearIdProdutos = cearIdProdutos;
        this.cearDataLancamento = cearDataLancamento;
        this.cearValor = cearValor;
@@ -58,7 +57,7 @@ public class CearProdutos  implements java.io.Serializable {
        this.cearModelo = cearModelo;
        this.cearDataFabricacao = cearDataFabricacao;
        this.cearUsado = cearUsado;
-       this.cearVendasprodutoses = cearVendasprodutoses;
+    
     }
    
      @Id 
@@ -85,11 +84,11 @@ public class CearProdutos  implements java.io.Serializable {
 
     
     @Column(name="cear_valor", nullable=false, precision=10)
-    public BigDecimal getCearValor() {
+    public double getCearValor() {
         return this.cearValor;
     }
     
-    public void setCearValor(BigDecimal cearValor) {
+    public void setCearValor(double cearValor) {
         this.cearValor = cearValor;
     }
 
@@ -141,15 +140,6 @@ public class CearProdutos  implements java.io.Serializable {
     
     public void setCearUsado(String cearUsado) {
         this.cearUsado = cearUsado;
-    }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="cearProdutos")
-    public Set getCearVendasprodutoses() {
-        return this.cearVendasprodutoses;
-    }
-    
-    public void setCearVendasprodutoses(Set cearVendasprodutoses) {
-        this.cearVendasprodutoses = cearVendasprodutoses;
     }
 
 

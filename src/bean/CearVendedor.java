@@ -2,15 +2,15 @@ package bean;
 // Generated 08/10/2025 11:02:44 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
+
 import java.util.Date;
-import java.util.HashSet;
+
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,15 +31,15 @@ public class CearVendedor  implements java.io.Serializable {
      private String cearTelefone;
      private String cearEmail;
      private Date cearDataContratacao;
-     private BigDecimal cearSalario;
+     private double cearSalario;
      private String cearAtivo;
-     private Set cearVendases = new HashSet(0);
+
 
     public CearVendedor() {
     }
 
 	
-    public CearVendedor(int cearIdVendedor, String cearNome, String cearCpf, String cearTelefone, String cearEmail, Date cearDataContratacao, BigDecimal cearSalario, String cearAtivo) {
+    public CearVendedor(int cearIdVendedor, String cearNome, String cearCpf, String cearTelefone, String cearEmail, Date cearDataContratacao, double cearSalario, String cearAtivo) {
         this.cearIdVendedor = cearIdVendedor;
         this.cearNome = cearNome;
         this.cearCpf = cearCpf;
@@ -49,7 +49,7 @@ public class CearVendedor  implements java.io.Serializable {
         this.cearSalario = cearSalario;
         this.cearAtivo = cearAtivo;
     }
-    public CearVendedor(int cearIdVendedor, String cearNome, String cearCpf, String cearTelefone, String cearEmail, Date cearDataContratacao, BigDecimal cearSalario, String cearAtivo, Set cearVendases) {
+    public CearVendedor(int cearIdVendedor, String cearNome, String cearCpf, String cearTelefone, String cearEmail, Date cearDataContratacao, double cearSalario, String cearAtivo, Set cearVendases) {
        this.cearIdVendedor = cearIdVendedor;
        this.cearNome = cearNome;
        this.cearCpf = cearCpf;
@@ -58,7 +58,7 @@ public class CearVendedor  implements java.io.Serializable {
        this.cearDataContratacao = cearDataContratacao;
        this.cearSalario = cearSalario;
        this.cearAtivo = cearAtivo;
-       this.cearVendases = cearVendases;
+    
     }
    
      @Id 
@@ -125,11 +125,11 @@ public class CearVendedor  implements java.io.Serializable {
 
     
     @Column(name="cear_salario", nullable=false, precision=10)
-    public BigDecimal getCearSalario() {
+    public double getCearSalario() {
         return this.cearSalario;
     }
     
-    public void setCearSalario(BigDecimal cearSalario) {
+    public void setCearSalario(double cearSalario) {
         this.cearSalario = cearSalario;
     }
 
@@ -142,16 +142,6 @@ public class CearVendedor  implements java.io.Serializable {
     public void setCearAtivo(String cearAtivo) {
         this.cearAtivo = cearAtivo;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="cearVendedor")
-    public Set getCearVendases() {
-        return this.cearVendases;
-    }
-    
-    public void setCearVendases(Set cearVendases) {
-        this.cearVendases = cearVendases;
-    }
-
 
 
 

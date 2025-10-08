@@ -8,7 +8,23 @@ package dao;
  *
  * @author u07236073113
  */
+
+import java.util.ArrayList;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 public abstract class DaoAbstract {
+
+  
+        
+       public Session session;
+       public DaoAbstract(){
+           SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+           session = sessionFactory.openSession();
+       
+        
+    }
+    
+    
      public abstract void insert(Object objeto);
      public abstract void update(Object objeto);
      public abstract void delete(Object objeto);
